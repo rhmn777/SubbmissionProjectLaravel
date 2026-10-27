@@ -64,6 +64,14 @@ Route::fallback(function () {
 });
 
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');
 Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
+
+Route::get('/products',[ProductController::class,'index']);
+/*Route::get('/products/{id}', function ($id) {
+    return 'Products #' . $id;
+});*/
+
+Route::get('/produtcs/{id',[ProductController::class,'show']);
