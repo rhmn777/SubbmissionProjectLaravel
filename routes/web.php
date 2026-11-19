@@ -75,3 +75,20 @@ Route::get('/products',[ProductController::class,'index']);
 });*/
 
 Route::get('/produtcs/{id',[ProductController::class,'show']);
+
+use App\Http\Controllers\JurusanController;
+
+Route::get('/jurusan', [JurusanController::class, 'index'])
+    ->name('jurusan.index');
+
+// Route menampilkan form tambah jurusan
+Route::get('/jurusan/create', [JurusanController::class, 'create'])
+    ->name('jurusan.create');
+
+// Route menyimpan data jurusan
+Route::post('/jurusan', [JurusanController::class, 'store'])
+    ->name('jurusan.store');
+
+// Route menampilkan detail jurusan
+Route::get('/jurusan/{id}', [JurusanController::class, 'show'])
+    ->name('jurusan.show');
